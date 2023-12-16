@@ -1,0 +1,17 @@
+.menu {
+  background-color: black;
+  display: flex;
+  gap: 0 30px;
+  padding: 10px 40px;
+  color: white;
+}
+
+.menu li {
+  list-style: none;
+  text-transform: capitalize;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+}

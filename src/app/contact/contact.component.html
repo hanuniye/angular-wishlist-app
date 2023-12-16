@@ -1,0 +1,43 @@
+<div class="container">
+  <form 
+    [formGroup]="contactForm"
+    (ngSubmit)="$event.preventDefault(); submitForm()"
+  >
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" formControlName="name" placeholder="name" />
+      <div class="mt-0" *ngIf="contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)">
+        <small class="text-danger" *ngIf="contactForm.get('name')?.hasError('required')">
+          name field is required
+        </small>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="text" class="form-control" formControlName="email" placeholder="email" />
+      <div class="mt-0" *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)">
+        <small class="text-danger" *ngIf="contactForm.get('email')?.hasError('required')">
+          email field is required
+        </small>
+        <small class="text-danger" *ngIf="contactForm.get('email')?.hasError('email')">
+          please enter valid email 
+        </small>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Message</label>
+      <textarea class="form-control" formControlName="message" rows="3"></textarea>
+      <div class="mt-0" *ngIf="contactForm.get('message')?.invalid && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched)">
+        <small class="text-danger" *ngIf="contactForm.get('message')?.hasError('required')">
+          message field is required
+        </small>
+        <small class="text-danger" *ngIf="contactForm.get('message')?.hasError('minlength')">
+          minimum length are 10 charecter 
+        </small>
+      </div>
+    </div>
+    <div class="mb-3">
+      <input [disabled]="contactForm.invalid" type="submit" class="form-control btn btn-primary"/>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,20 @@
+<div class="wish-list-item">
+  <li class="form-check">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      [checked]="item.isCompleted"
+      (click)="toggleItem(item)"
+    />
+    <label
+      class="form-check-label"
+      [ngClass]="item.isCompleted ? 'strikeout' : ''"
+    >
+      {{ item.wishText }}
+    </label>
+  </li>
+
+  <button type="button" class="btn-close " (click)="removeWish()"></button>
+</div>
+
+

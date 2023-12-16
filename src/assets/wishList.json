@@ -1,0 +1,14 @@
+[
+    {
+        "wishText": "cook food",
+        "isCompleted": false
+    },
+    {
+        "wishText": "visit shcool",
+        "isCompleted": true
+    },
+    {
+        "wishText": "play football",
+        "isCompleted": false
+    }
+]

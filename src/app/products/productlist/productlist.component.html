@@ -1,0 +1,6 @@
+<div class="container">
+    <div (click)="goToProductDetails(product.id)" class="products" *ngFor="let product of products">
+        <h5>{{product.productName}}</h5>
+        <p>{{product.price}}</p>
+    </div>
+</div>
