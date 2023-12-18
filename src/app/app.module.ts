@@ -2,22 +2,24 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { WishModule } from './wish/wish.module';
-import { ContactModule } from './contact/contact.module';
 import { AppRoutingModule } from './app-routing.module';
-import { ProductsModule } from './products/products.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
+import { AdminModule } from './admin/admin.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    NotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    WishModule,
-    ContactModule,
     AppRoutingModule,
-    ProductsModule
+    AdminModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

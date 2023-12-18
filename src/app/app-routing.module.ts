@@ -1,27 +1,40 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WishComponent } from './wish/wish.component';
-import { ContactComponent } from './contact/contact.component';
-import { ProductlistComponent } from './products/productlist/productlist.component';
-import { ProductDetailsComponent } from './products/product-details/product-details.component';
+import { ContactComponent } from './admin/contact/contact.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: "", component: WishComponent,
+    path: '',
+    redirectTo: "login", pathMatch: "full",
+    title: "login"
   },
   {
-    path: "contact", component: ContactComponent,
+    path: 'admin',
+    canActivate: [AuthGuard],
+    loadChildren: () => import("./admin/admin.module").then(m => m.AdminModule)
   },
   {
-    path: "products", component: ProductlistComponent,
+    path: 'login',
+    component: LoginComponent,
+    title: "login"
   },
   {
-    path: "products/:id", component: ProductDetailsComponent,
-  }
+    path: 'contact',
+    component: ContactComponent,
+    title: "contact"
+  },
+  //not found page
+  {
+    path: '**',
+    component: NotFoundComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

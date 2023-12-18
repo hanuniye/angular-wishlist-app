@@ -1,0 +1,30 @@
+.menu {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+  }
+  
+  .menu .lists{
+    display: flex;
+    justify-content: space-between;
+    gap: 0 30px;
+    color: white;
+  }
+  
+  .menu li {
+    list-style: none;
+    text-transform: capitalize;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    color: rgb(191, 188, 188);
+  }
+
+  .active{
+    color: white;
+  }
+  
+  

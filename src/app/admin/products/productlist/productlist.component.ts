@@ -20,6 +20,6 @@ export class ProductlistComponent implements OnInit {
   }
 
   goToProductDetails(id: any){
-    this.router.navigate(['products', id])
+    this.router.navigate(['admin/products', id])
   }
 }
